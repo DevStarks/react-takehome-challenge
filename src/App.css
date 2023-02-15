@@ -55,7 +55,7 @@ input:focus {
 }
 
 button {
-  width: 120px;
+  min-width: 120px;
   padding: 0.8em;
   cursor: pointer;
   font-weight: 400;
@@ -99,7 +99,9 @@ button {
   list-style: none;
   margin-bottom: 0px;
 }
+
 .todo {
+  padding: 1rem;
   text-align: left;
   margin-bottom: 0.5rem;
   background: #494847;
@@ -107,11 +109,23 @@ button {
   transition: all 0.3s ease-out;
   border-left: 5px solid #cf972e;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
-.todo-entry {
-  padding-left: 5px;
+
+.todo-info {
+  display: flex;
+  flex-direction: column;
+  max-width: max-content;
+}
+
+.todo-info-statuses {
+  font-size: small;
+  margin-bottom: 0.5rem;
+}
+
+.todo-buttons {
+  white-space: nowrap;
 }
 
 .empty {

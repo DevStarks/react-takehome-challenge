@@ -1,16 +1,24 @@
-const TodoInput = ({ todo, setTodo, addTodo }) => {
+import {useState} from "react";
+
+const TodoInput = ({addTodo}) => {
+  const [content, setContent] = useState("");
+  const onAdd = () => {
+    addTodo(content);
+    setContent("")
+  }
+  
   return (
     <div className="input-wrapper">
       <input
         type="text"
         name="todo"
-        value={todo}
+        value={content}
         placeholder="Create a new todo"
         onChange={(e) => {
-          setTodo(e.target.value);
+          setContent(e.target.value);
         }}
       />
-      <button className="add-button" onClick={addTodo}>
+      <button className="add-button" onClick={onAdd}>
         Add
       </button>
     </div>
