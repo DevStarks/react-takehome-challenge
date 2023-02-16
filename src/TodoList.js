@@ -6,8 +6,8 @@ const TodoList = ({list, remove, update}) => {
     <>
       {list?.length > 0 ? (
         <div className="todo-list">
-          {list.map((entry, index) => (
-            <TodoListItem key={index} entry={entry} onEdit={update} onDelete={remove}/>
+          {list.map((entry) => (
+            <TodoListItem key={entry.id} entry={entry} onEdit={update} onDelete={remove}/>
           ))}
         </div>
       ) : (
